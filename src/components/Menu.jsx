@@ -12,6 +12,7 @@ export default function Menu() {
     }
     if (!userName) {
       setWarning(true);
+      setTimeout(()=>{setWarning(false)},5000)
     }
   }
   function handleEnter(a) {
