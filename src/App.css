@@ -99,4 +99,7 @@ h3 {
   .EndScreen {
     width: 90vw;
   }
+button:active {
+ background-color: blanchedalmond;
+}
 }
