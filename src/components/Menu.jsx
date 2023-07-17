@@ -23,6 +23,7 @@ export default function Menu() {
   return (
     <div className="Menu">
       {warning && <p id="p">Name Can't be Empty</p>}
+      <h2 id="h2">example for branching </h2>
       <h2 id="h2">Enter Your Name: </h2>
       <input
         type="text"
