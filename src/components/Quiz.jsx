@@ -3,9 +3,8 @@ import { gameStateContext } from "../helper/Context";
 import { Questions } from "../helper/Questions";
 
 export default function Quiz() {
-  const { score, setScore, gameState, setGameState } = useContext(
-    gameStateContext
-  );
+  const { score, setScore, gameState, setGameState } =
+    useContext(gameStateContext);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [optionsChosen, setOptionChosen] = useState("");
 
@@ -14,10 +13,7 @@ export default function Quiz() {
       setScore(score + 1);
     }
     setCurrentQuestion(currentQuestion + 1);
-    setStyleA("");
-    setStyleB("");
-    setStyleC("");
-    setStyleD("");
+    setOptionChosen("");
   };
   const handleFinish = () => {
     if (Questions[currentQuestion].asnwer === optionsChosen) {
@@ -25,43 +21,10 @@ export default function Quiz() {
       setScore(score + 1);
     }
     setGameState("end");
-    setStyleA("");
-    setStyleB("");
-    setStyleC("");
-    setStyleD("");
   };
-
-  const [styleA, setStyleA] = useState("");
-  const [styleB, setStyleB] = useState("");
-  const [styleC, setStyleC] = useState("");
-  const [styleD, setStyleD] = useState("");
 
   const buttonHandler = (e) => {
     setOptionChosen(e);
-    if (e == "optionA") {
-      setStyleA("chosen");
-      setStyleB("");
-      setStyleC("");
-      setStyleD("");
-    }
-    if (e == "optionB") {
-      setStyleA("");
-      setStyleB("chosen");
-      setStyleC("");
-      setStyleD("");
-    }
-    if (e == "optionC") {
-      setStyleA("");
-      setStyleB("");
-      setStyleC("chosen");
-      setStyleD("");
-    }
-    if (e == "optionD") {
-      setStyleA("");
-      setStyleB("");
-      setStyleC("");
-      setStyleD("chosen");
-    }
   };
 
   return (
@@ -69,26 +32,25 @@ export default function Quiz() {
       <h1>{Questions[currentQuestion].prompt}</h1>
       <div className="questions">
         <button
-          className={`${styleA} qbtn`}
-          
+          className={`${optionsChosen == "optionA" ? "chosen" : ""} qbtn`}
           onClick={() => buttonHandler("optionA")}
         >
           {Questions[currentQuestion].optionA}
         </button>
         <button
-          className={`${styleB} qbtn`}
+          className={`${optionsChosen == "optionB" ? "chosen" : ""} qbtn`}
           onClick={() => buttonHandler("optionB")}
         >
           {Questions[currentQuestion].optionB}
         </button>
         <button
-          className={`${styleC} qbtn`}
+          className={`${optionsChosen == "optionC" ? "chosen" : ""} qbtn`}
           onClick={() => buttonHandler("optionC")}
         >
           {Questions[currentQuestion].optionC}
         </button>
         <button
-          className={`${styleD} qbtn`}
+          className={`${optionsChosen == "optionD" ? "chosen" : ""} qbtn`}
           onClick={() => buttonHandler("optionD")}
         >
           {Questions[currentQuestion].optionD}
