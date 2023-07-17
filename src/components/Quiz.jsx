@@ -69,25 +69,26 @@ export default function Quiz() {
       <h1>{Questions[currentQuestion].prompt}</h1>
       <div className="questions">
         <button
-          className={`${styleA}`}
+          className={`${styleA} qbtn`}
+          
           onClick={() => buttonHandler("optionA")}
         >
           {Questions[currentQuestion].optionA}
         </button>
         <button
-          className={`${styleB}`}
+          className={`${styleB} qbtn`}
           onClick={() => buttonHandler("optionB")}
         >
           {Questions[currentQuestion].optionB}
         </button>
         <button
-          className={`${styleC}`}
+          className={`${styleC} qbtn`}
           onClick={() => buttonHandler("optionC")}
         >
           {Questions[currentQuestion].optionC}
         </button>
         <button
-          className={`${styleD}`}
+          className={`${styleD} qbtn`}
           onClick={() => buttonHandler("optionD")}
         >
           {Questions[currentQuestion].optionD}

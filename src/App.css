@@ -71,6 +71,9 @@ h3 {
 .chosen {
   background-color: lightpink;
 }
+.qbtn:hover {
+  background-color: lightpink;
+}
 .btn1 {
   width: 200px;
 }

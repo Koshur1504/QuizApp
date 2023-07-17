@@ -7,7 +7,7 @@ import EndScreen from "./components/EndScreen";
 import { gameStateContext } from "./helper/Context";
 
 export default function App() {
-  const [gameState, setGameState] = useState("menu");
+  const [gameState, setGameState] = useState("playing");
   const [userName, setUserName] = useState("");
   const [score, setScore] = useState(0);
 
